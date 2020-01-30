@@ -56,6 +56,25 @@ int main(int argc, const char **argv)
     // user input for these values using std::cin. Pass the user input to the
     // RoutePlanner object below in place of 10, 10, 90, 90.
 
+    // Initialize the coordinates for start and goal locations.
+    float start_x = -1;
+    float start_y = -1;
+    float end_x = -1;
+    float end_y = -1;
+
+    // User input loop.
+    while ((start_x < 0 || start_x > 100) || (start_y < 0 || start_y > 100)
+     || (end_x < 0 || end_x > 100) || (end_y < 0 || end_y > 100)){
+        std::cout << "Introduce the x coordinate in the [0 100] range for the start location" << "\n";
+        std::cin >> start_x;
+        std::cout << "Introduce the y coordinate in the [0 100] range for the start location" << "\n";
+        std::cin >> start_y;
+        std::cout << "Introduce the x coordinate in the [0 100] range for the goal location" << "\n";
+        std::cin >> end_x;
+        std::cout << "Introduce the y coordinate in the [0 100] range for the goal location" << "\n";
+        std::cin >> end_y;
+    }
+
     // Build Model.
     RouteModel model{osm_data};
 
